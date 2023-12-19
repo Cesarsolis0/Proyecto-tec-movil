@@ -55,9 +55,9 @@ class CardReceta extends StatelessWidget {
                   Text(
                     cardcomidas.nombre,
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   )
                 ],
