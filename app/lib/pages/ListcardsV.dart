@@ -8,17 +8,30 @@ class ListcardV extends StatefulWidget {
 }
 
 class ListcardVState extends State<ListcardV> {
-  List<RecetaV> cardcomidas = RecetaV.recetas();
+  late List<RecetaV> cardcomidas;
+
+  @override
+  void initState() {
+    super.initState();
+    cardcomidas = RecetaV.recetas(context);
+  }
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        shrinkWrap: true,
-        itemCount: cardcomidas.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Dismissible(
-              key: ObjectKey(cardcomidas[index]),
-              child: CardReceta(cardcomidas[index]));
-        });
+      shrinkWrap: true,
+      itemCount: cardcomidas.length,
+      itemBuilder: (BuildContext context, int index) {
+        return GestureDetector(
+          onTap: () {
+            RecetaV.mostrarDetalle(context, cardcomidas[index]);
+          },
+          child: Dismissible(
+            key: ObjectKey(cardcomidas[index]),
+            child: CardReceta(cardcomidas[index]),
+          ),
+        );
+      },
+    );
   }
 }
