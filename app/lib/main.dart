@@ -1,5 +1,5 @@
+import 'package:app/pages/Inicio.dart';
 import 'package:flutter/material.dart';
-import 'package:recetario/Vistas/Home.dart';
 
 void main() => runApp(const MyApp());
 
@@ -11,11 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Recetario',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          primarySwatch: Colors.blue,
-          primaryColor: Colors.white,
-          textTheme: TextTheme(bodyText2: TextStyle(color: Colors.white))),
-      home: Home(),
+      home: Inicio(),
     );
   }
 }
